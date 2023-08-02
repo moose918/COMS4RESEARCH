@@ -1,0 +1,14 @@
+#!/bin/bash -l
+
+#SBATCH -J vs_slurm_upload
+#SBATCH --ntasks=1
+#SBATCH --array=0-14
+FILES=(/home-mscluster/mgumpu/control-pcgrl-coms4/*)
+SBATCH -o /home-mscluster/mgumpu/slurm.%N.%j.out
+#specify the filename for stderr
+SBATCH -e /home-mscluster/mgumpu/slurm.%N.%j.err
+# The following are shell commands -- which will be executed according to the settings specified above
+
+pwd
+conda info --envs
+conda activate pcgrl
