@@ -1,6 +1,7 @@
 conda env create pcgrl python=3.7
 conda activate pcgrl
 conda install pytorch torchvision torchaudio -c pytorch
+conda install torchfusion
 
 git submodule update --init submodules/qdpy/
 git submodule update --init submodules/pytorch-neat/
